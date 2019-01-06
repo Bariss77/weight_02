@@ -1,0 +1,50 @@
+{%  extends "my_app/base.html" %}
+
+{% block content %}
+
+
+<div style="overflow: hidden;">
+    <div style="width: 100%;">
+
+        <div style="float: left; width:30%; border: 1px solid black;">
+          <div >
+            <h2 align="center">
+              ВЕС дата время
+            </h2>
+          {% for weight in weights %}
+          <p align="center">{{ weight.weight }} ___ {{weight.date|date:"d.m.Y H:i"}}</p>
+          {% endfor %}
+          </div>
+        </div>
+
+        <div style="float: left; width:30%; border: 1px solid black;">
+          <div >
+            <h2 align="center">
+              ВЕС дата время
+            </h2>
+
+          <form method="POST" class="post-form">
+            {% csrf_token %}
+            {{ form.as_p }}
+          <button type="submit" class="save btn btn-default">Save</button>
+          </form>
+
+          </div>
+        </div>
+
+        <div style="float: left; width:30%; border: 1px solid black;">
+          <div >
+            <h2 align="center">
+              Потребление каллорий
+            </h2>
+          {% for food in foods %}
+          <p align="center">{{ food.title }} {{food.weight_food}}</p>
+          {% endfor %}
+          </div>
+        </div>
+
+    </div>
+</div>
+
+
+{% endblock %}

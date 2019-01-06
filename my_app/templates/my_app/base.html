@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Weight and food.</title>
+  {% load staticfiles %}
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css">
+</head>
+
+<body>
+
+  <h1 style="border: 3px solid blue"; align="center">
+    <a href='/index'>Weight</a>
+    <a href='/food'>Food</a>
+  </h1>
+
+  {% block content %}
+  {% endblock %}
+
+
+</body>
+
+</html>
